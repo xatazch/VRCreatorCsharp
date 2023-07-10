@@ -15,5 +15,6 @@ public class DartBehaviour : MonoBehaviour
     void Update()
     {
         gameObject.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        
     }
 }
