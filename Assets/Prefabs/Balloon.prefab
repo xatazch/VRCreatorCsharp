@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 781387337780470676}
+  - component: {fileID: 1787824179959592560}
+  - component: {fileID: 2119828709903895186}
   m_Layer: 0
   m_Name: Balloon
-  m_TagString: Untagged
+  m_TagString: Balloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781387337780470677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.413, y: 3.669, z: 10.751}
+  m_LocalPosition: {x: -32.376, y: 3.379, z: 3.775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32,6 +34,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1787824179959592560
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781387337780470677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0.75, y: 0.87, z: 0}
+--- !u!54 &2119828709903895186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781387337780470677}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &781387337484947525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,25 +142,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 54ee1c63394f22d4896eec554985337a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee32e1f2543b0a46b4185c3dfc9a9fd, type: 3}
---- !u!1 &439490694886354196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ee32e1f2543b0a46b4185c3dfc9a9fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 781387337484947525}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &781387337391616595
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439490694886354196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 1.51, z: 0}
 --- !u!4 &960026318957328302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ee32e1f2543b0a46b4185c3dfc9a9fd,
