@@ -7,24 +7,33 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int baloonsInScene;
+    public static Action BalloonPopped;
+
+    public int balloonsInScene;
     public int poppedBalloons = 0;
 
-    private void Start()
+    private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
 
-        baloonsInScene = GameObject.FindGameObjectsWithTag("Balloon").Length;
+        balloonsInScene = GameObject.FindGameObjectsWithTag("Balloon").Length;
+
+        BalloonPopped += OnBalloonPopped;
     }
 
-    public void BalloonPopped()
+    private void OnDestroy()
+    {
+        BalloonPopped -= OnBalloonPopped;
+    }
+
+    public void OnBalloonPopped()
     {
         poppedBalloons++;
 
-        if(poppedBalloons >= baloonsInScene)
+        if (poppedBalloons >= balloonsInScene)
         {
             WinGame();
         }

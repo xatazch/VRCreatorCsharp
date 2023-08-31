@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,13 @@ using UnityEngine;
 public class DartBehaviour : MonoBehaviour
 {
     public float speed = 10f;
-
+    public GameObject balloonPopParticlePrefab;
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 5.0f);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -24,10 +26,17 @@ public class DartBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Balloon"))
         {
             Debug.Log("Hit Balloon");
-            GameManager.Instance.BalloonPopped();
-            
+            GameManager.BalloonPopped.Invoke();
+
+            Instantiate(
+                balloonPopParticlePrefab,
+                collision.gameObject.transform.position,
+                collision.gameObject.transform.rotation);
+
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
         }
     }
 }
