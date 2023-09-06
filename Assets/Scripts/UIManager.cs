@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     public TextMeshProUGUI balloonPopedUI;
+    public CanvasGroup winPanel;
+    public float fadeSpeed = 1;
 
     void Start()
     {
@@ -22,15 +25,20 @@ public class UIManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        balloonPopedUI.text = 
-            GameManager.Instance.poppedBalloons 
-            + "/" 
+        balloonPopedUI.text =
+            GameManager.Instance.poppedBalloons
+            + "/"
             + GameManager.Instance.balloonsInScene;
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator ShowWinPanel()
     {
-
+        Debug.Log("Inside ShowWinPanel");
+        while (winPanel.alpha < 1)
+        {
+            winPanel.alpha += Time.deltaTime * fadeSpeed;
+            Debug.Log("winPanel.alpha: " + winPanel.alpha.ToString());
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

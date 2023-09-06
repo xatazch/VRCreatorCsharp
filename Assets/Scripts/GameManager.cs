@@ -42,5 +42,6 @@ public class GameManager : MonoBehaviour
     private void WinGame()
     {
         Debug.Log("You are  a Winner !!!");
+        StartCoroutine(UIManager.Instance.ShowWinPanel());
     }
 }
