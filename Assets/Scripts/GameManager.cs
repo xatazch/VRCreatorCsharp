@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,5 +44,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You are  a Winner !!!");
         StartCoroutine(UIManager.Instance.ShowWinPanel());
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
